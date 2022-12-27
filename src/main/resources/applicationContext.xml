@@ -5,7 +5,13 @@
     http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="music" class="ru.maxima.spring.player.RockMusic">
+    <bean id="musicBean" class="ru.maxima.spring.player.RockMusic">
+    </bean>
+
+    <bean id="musicPlayer" class="ru.maxima.spring.player.MusicPlayer">
+        <property name="music" ref="musicBean"/>
+        <property name="name" value="SomeName"/>
+        <property name="volume" value="50"/>
     </bean>
 
 </beans>
